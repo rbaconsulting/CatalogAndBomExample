@@ -1,0 +1,48 @@
+# Entries in this file are not auto imported so it is ok to declare semi conflicting things like an
+# entry for latest spring and previous major as projects migrate
+[versions]
+bom = "1.0.0" # Version of this BOM file, it will be overridden during build time before publishing
+jackson = "2.19.2"
+jakarta = "10.0.0"
+junit = " 5.11.3"
+log4j = "2.25.1"
+mockito = "5.18.0"
+slf4j = "2.0.16"
+springBoot = "3.4.2"
+springBootV2 = "2.7.16"
+springCloud = "2024.0.0"
+springData = "2024.1.0"
+springDoc = "2.7.0"
+springFramework = "6.2.9"
+springSecurity = "6.4.2"
+tomcat = "10.1.44"
+
+# use version to hard code a version in line or use version.ref to refer to a version above by name
+[libraries]
+corp-bom = { module = "com.rba.examples.public:bom-example", version.ref = "bom" }
+# Logging
+log4j-bom = { module = "org.apache.logging.log4j:log4j-bom", version.ref = "log4j" }
+slf4j-bom = { module = "org.slf4j:slf4j-bom", version.ref = "slf4j" }
+# General
+jackson-bom = { module = "com.fasterxml.jackson:jackson-bom", version.ref = "jackson" }
+jakarta-bom = { module = "jakarta.platform:jakarta.jakartaee-bom", version.ref = "jakarta" }
+# Spring
+spring-bom = { module = "org.springframework:spring-framework-bom", version.ref = "springFramework" }
+spring-boot-bom = { module = "org.springframework.boot:spring-boot-dependencies", version.ref = "springBoot" }
+spring-boot-v2-bom = { module = "org.springframework.boot:spring-boot-dependencies", version.ref = "springBootV2" }
+spring-cloud-bom = { module = "org.springframework.cloud:spring-cloud-dependencies", version.ref = "springCloud" }
+spring-data-bom = { module = "org.springframework.data:spring-data-bom", version.ref = "springData" }
+spring-security-bom = { module = "org.springframework.security:spring-security-bom", version.ref = "springSecurity" }
+# Tomcat
+tomcat-core = { module = "org.apache.tomcat.embed:tomcat-embed-core", version.ref = "tomcat" }
+# Unit Testing
+junit-bom = { module = "org.junit:junit-bom", version.ref = "junit" }
+mockito-bom = { module = "org.mockito:mockito-bom", version.ref = "mockito" }
+
+
+[plugins]
+sementic-versioning = { id = "com.github.jmongard.git-semver-plugin", version = "0.16.1" }
+spring-boot = { id = "org.springframework.boot", version.ref = "springBoot" }
+spring-boot-v2 = { id = "org.springframework.boot", version.ref = "springBootV2" }
+spring-dependency-management = { id = "io.spring.dependency-management", version = "1.1.7" }
+swagger = { id = "io.swagger.core.v3.swagger-gradle-plugin", version = "2.2.35" }
